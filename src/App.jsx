@@ -1,23 +1,48 @@
-import { useState } from "react";
-import htmlLogo from "./assets/html.svg";
-import cssLogo from "./assets/css.svg";
-import jsLogo from "./assets/js.svg";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import nodeLogo from "./assets/node.svg";
+import { Outlet } from "react-router-dom";
 
-import cfImage from "./assets/CF.png";
-import bbImage from "./assets/BB.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+// import Project from "./components/Project";
+import NavBar from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Ivory Rines</h1>
-      <h2>Junior Full-Stack Deveoper</h2>
-      <div>
+      <NavBar />
+      <main className="mx-3">
+        <Outlet />
+      </main>
+      <Footer />
+      {/* <main className="w-screen d-flex flex-column align-items-center">
+        <NavBar />
+        <div
+          style={{
+            maxWidth: "1800px",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          
+          <Project />
+        </div>
+      </main> */}
+    </>
+  );
+}
+
+export default App;
+
+// import htmlLogo from "./assets/logos/html.svg";
+// import cssLogo from "./assets/logos/css.svg";
+// import jsLogo from "./assets/logos/js.svg";
+// import reactLogo from "./assets/logos/react.svg";
+// import viteLogo from "./assets/logos/vite.svg";
+// import nodeLogo from "./assets/logos/node.svg";
+
+{
+  /* <div>
         <h3>Technical Skills</h3>
         <a
           href="https://developer.mozilla.org/en-US/docs/Web/HTML"
@@ -46,42 +71,5 @@ function App() {
         <a href="https://nodejs.org" target="_blank">
           <img src={nodeLogo} className="logo node" alt="Node logo" />
         </a>
-      </div>
-
-      <div>
-        <h3>Projects</h3>
-        <a
-          href="https://sora0216.github.io/YourCulinaryForecast/"
-          target="_blank"
-        >
-          <img
-            src={cfImage}
-            className="project cf"
-            alt="screenshot of Culinary Forecast application"
-          />
-        </a>
-        <a href="https://bootcamp-banking.onrender.com/" target="_blank">
-          <img
-            src={bbImage}
-            className="project bb"
-            alt="screenshot of Bootcamp Banking application"
-          />
-        </a>
-      </div>
-
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-    </>
-  );
+      </div> */
 }
-
-export default App;
