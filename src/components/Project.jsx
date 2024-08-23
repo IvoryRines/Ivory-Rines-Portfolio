@@ -1,63 +1,51 @@
-// import cfImage from "./assets/CF.png";
-// import bbImage from "./assets/BB.jpg";
-// import rrImage from "./assets/RR.png";
+import cfImage from "../assets/CF.png";
+import bbImage from "../assets/BB.jpg";
+import rrImage from "../assets/RR.png";
+
 const projectData = [
   {
-    title: "Your Culinary Forecast",
+    title: "Reel Ratings",
     description: "",
+    image: rrImage,
+    link: "https://movie-review-gclk.onrender.com",
+    name: "reelRatings",
   },
   {
     title: "Bootcamp Banking",
-    description: "this is a project",
+    description: "",
+    image: bbImage,
+    link: "https://bootcamp-banking-smcq.onrender.com",
+    name: "bootcampBanking",
+  },
+  {
+    title: "Your Culinary Forecast",
+    description: "",
+    image: cfImage,
+    link: "https://sora0216.github.io/YourCulinaryForecast/",
+    name: "culinaryForecast",
   },
 ];
+
 const Project = () => {
   return (
-    <div>
-      {projectData.map((projectItem) => {
-        return <div>{projectItem.title}</div>;
-      })}
+    <div className="flex flex-wrap justify-center gap-4 p-4">
+      {projectData.map((project) => (
+        <a
+          key={project.name}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-shrink-0"
+        >
+          <img
+            src={project.image}
+            alt={`screenshot of ${project.title}`}
+            className="w-80 h-80 object-cover rounded-lg shadow-lg"
+          />
+        </a>
+      ))}
     </div>
   );
 };
-export default Project;
-{
-  /* <div>
 
-        <h3>Projects</h3>
-        <a
-          href="https://sora0216.github.io/YourCulinaryForecast/"
-          target="_blank"
-        >
-          <img
-            src={cfImage}
-            className="project cf"
-            alt="screenshot of Culinary Forecast application"
-          />
-        </a>
-        <a href="https://bootcamp-banking.onrender.com/" target="_blank">
-          <img
-            src={bbImage}
-            className="project bb"
-            alt="screenshot of Bootcamp Banking application"
-          />
-        </a>
-        <a href="https://movie-review-gclk.onrender.com/" target="_blank">
-          <img
-            src={rrImage}
-            className="project rr"
-            alt="screenshot of Reel Ratings application"
-          />
-        </a>
-      </div> */
-}
-{
-  /* <div>
-        <a
-          href="https://sora0216.github.io/YourCulinaryForecast/"
-          target="_blank"
-        >
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div> */
-}
+export default Project;
